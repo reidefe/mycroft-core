@@ -40,7 +40,7 @@ class EnclosureGeneric(Enclosure):
     def __init__(self):
         super().__init__()
 
-        # Notifications from mycroft-core
+        # Notifications from AI_core
         self.bus.on('enclosure.notify.no_internet', self.on_no_internet)
         # TODO: this requires the Enclosure to be up and running before the
         # training is complete.

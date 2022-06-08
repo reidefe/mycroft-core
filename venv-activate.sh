@@ -15,8 +15,8 @@
 # limitations under the License.
 
 
-# This script places the user in the mycroft-core virtual environment,
-# necessary to run unit tests or to interact directly with mycroft-core
+# This script places the user in the AI_core virtual environment,
+# necessary to run unit tests or to interact directly with AI_core
 # via an interactive Python shell.
 
 

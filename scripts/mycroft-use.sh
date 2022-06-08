@@ -19,15 +19,15 @@
 user=$( whoami )
 #Build being changed to
 change_to=${1}
-#path to mycroft-core checkout
+#path to AI_core checkout
 path=${2:-"${HOME}/mycroft-core"}
 #currently installed package
 current_pkg=$( cat /etc/apt/sources.list.d/repo.mycroft.ai.list )
 stable_pkg="deb http://repo.mycroft.ai/repos/apt/debian debian main"
 unstable_pkg="deb http://repo.mycroft.ai/repos/apt/debian debian-unstable main"
 
-mark_1_package_list=(mycroft-mark-1 mycroft-core mycroft-wifi-setup)
-picroft_package_list=(mycroft-picroft mycroft-core mycroft-wifi-setup)
+mark_1_package_list=(mycroft-mark-1 AI-core mycroft-wifi-setup)
+picroft_package_list=(mycroft-picroft AI-core mycroft-wifi-setup)
 
 # Determine the platform
 mycroft_platform="null"
@@ -166,7 +166,7 @@ function invoke_apt() {
     else
         # for unknown, just update the generic package
         echo "${1}ing the generic mycroft-core package..."
-        sudo apt-get "${1}" mycroft-core -y
+        sudo apt-get "${1}" AI-core -y
     fi
 }
 
@@ -180,7 +180,7 @@ function remove_all() {
     else
         # for unknown, just update the generic package
         echo "Removing the generic mycroft-core package..."
-        sudo apt-get remove mycroft-core -y
+        sudo apt-get remove AI-core -y
     fi
 }
 
@@ -312,7 +312,7 @@ elif [ "${change_to}" == "stable" ] ; then
 
         if [ -f /etc/init.d/mycroft-skills.original ] ; then
             restore_init_scripts
-            sudo chmod +x /etc/cron.hourly/mycroft-core # Enable updates
+            sudo chmod +x /etc/cron.hourly/AI-core # Enable updates
 
             # Reboot since the audio input won't work for some reason
             sudo reboot
@@ -326,7 +326,7 @@ elif [ "${change_to}" == "github" ] ; then
         git clone https://github.com/MycroftAI/mycroft-core.git "${path}"
     fi
 
-    sudo chmod -x /etc/cron.hourly/mycroft-core # Disable updates
+    sudo chmod -x /etc/cron.hourly/AI-core # Disable updates
 
     if [ -d "${path}" ] ; then
         if  [ -f /usr/local/bin/mimic ] ; then

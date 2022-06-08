@@ -72,7 +72,7 @@ class EnclosureReader(Thread):
         self.lang = lang or 'en-us'
         self.start()
 
-        # Notifications from mycroft-core
+        # Notifications from AI_core
         self.bus.on("mycroft.stop.handled", self.on_stop_handled)
 
     def read(self):
@@ -289,7 +289,7 @@ class EnclosureMark1(Enclosure):
         # we aren't running a Mark 1 with an Arduino)
         Timer(5, self.check_for_response).start()
 
-        # Notifications from mycroft-core
+        # Notifications from AI_core
         self.bus.on("enclosure.notify.no_internet", self.on_no_internet)
 
         # initiates the web sockets on display manager

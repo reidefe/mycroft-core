@@ -420,7 +420,7 @@ class PorcupineHotWord(HotWordEngine):
 
         LOG.warning('The Porcupine wakeword engine shipped with '
                     'Mycroft-core is deprecated and will be removed in '
-                    'mycroft-core 21.02. Use the mycroft-porcupine-plugin '
+                    'AI_core 21.02. Use the mycroft-porcupine-plugin '
                     'instead.')
         LOG.info(
             'Loading Porcupine using library path {} and keyword paths {}'

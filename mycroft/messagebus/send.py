@@ -40,7 +40,7 @@ def main():
                   "'{\"utterance\" : \"hello\"}'")
             exit()
     else:
-        print("Command line interface to the mycroft-core messagebus.")
+        print("Command line interface to the AI_core messagebus.")
         print("Usage: python -m mycroft.messagebus.send message")
         print("       python -m mycroft.messagebus.send message JSON-string\n")
         print("Examples: python -m mycroft.messagebus.send system.wifi.setup")

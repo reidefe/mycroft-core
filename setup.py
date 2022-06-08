@@ -20,7 +20,7 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
 
 def get_version():
-    """ Find the version of mycroft-core"""
+    """ Find the version of AI_core"""
     version = None
     version_file = os.path.join(BASEDIR, 'mycroft', 'version', '__init__.py')
     major, minor, build = (None, None, None)
@@ -53,7 +53,7 @@ def required(requirements_file):
 
 
 setup(
-    name='mycroft-core',
+    name='AI_core',
     version=get_version(),
     license='Apache-2.0',
     author='Mycroft A.I.',

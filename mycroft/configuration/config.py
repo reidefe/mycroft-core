@@ -48,7 +48,7 @@ def is_remote_list(values):
 
 
 def translate_remote(config, setting):
-    """Translate config names from server to equivalents for mycroft-core.
+    """Translate config names from server to equivalents for AI_core.
 
     Args:
         config:     base config to populate
@@ -59,7 +59,7 @@ def translate_remote(config, setting):
     for k, v in setting.items():
         if k not in IGNORED_SETTINGS:
             # Translate the CamelCase values stored remotely into the
-            # Python-style names used within mycroft-core.
+            # Python-style names used within AI_core.
             key = re.sub(r"Setting(s)?", "", k)
             key = camel_case_split(key).replace(" ", "_").lower()
             if isinstance(v, dict):

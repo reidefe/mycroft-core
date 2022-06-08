@@ -731,7 +731,7 @@ def do_draw_main(scr):
         scr.addstr(0, 0, "Log Output:" + " " * (curses.COLS - 31) +
                    str(start) + "-" + str(end) + " of " + str(cLogs),
                    CLR_HEADING)
-    ver = " mycroft-core " + mycroft.version.CORE_VERSION_STR + " ==="
+    ver = " AI_core " + mycroft.version.CORE_VERSION_STR + " ==="
     scr.addstr(1, 0, "=" * (curses.COLS - 1 - len(ver)), CLR_HEADING)
     scr.addstr(1, curses.COLS - 1 - len(ver), ver, CLR_HEADING)
 

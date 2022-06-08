@@ -14,7 +14,7 @@
 #
 import time
 
-from mycroft.util.signal import check_for_signal
+from src.core.AI_core.mycroft.util.signal import check_for_signal
 
 
 def is_speaking():
@@ -44,7 +44,7 @@ def stop_speaking():
     TODO: Skills should only be able to stop speech they've initiated
     """
     if is_speaking():
-        from mycroft.messagebus.send import send
+        from src.core.AI_core.mycroft.messagebus.send import send
         send('mycroft.audio.speech.stop')
 
         # Block until stopped

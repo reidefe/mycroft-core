@@ -57,7 +57,7 @@ ENV CI true
 #   This may not be the most efficient way to do this in terms of number of
 #   steps, but it is built to take advantage of Docker's caching mechanism
 #   to only rebuild things that have changed since the last build.
-RUN mkdir -p /opt/mycroft/mycroft-core /opt/mycroft/skills /root/.mycroft /var/log/mycroft
+RUN mkdir -p /opt/mycroft/AI_core /opt/mycroft/skills /root/.mycroft /var/log/mycroft
 RUN python3 -m venv "/opt/mycroft/mycroft-core/.venv"
 
 # Install required Python packages.  Generate hash, which mycroft core uses to
@@ -83,7 +83,7 @@ ENV PATH /opt/mycroft/mycroft-core/.venv/bin:$PATH
 # Install Mark I default skills
 RUN msm -p mycroft_mark_1 default
 COPY . /opt/mycroft/mycroft-core
-RUN .venv/bin/python -m pip install --no-deps /opt/mycroft/mycroft-core
+RUN .venv/bin/python -m pip install --no-deps /opt/mycroft/AI_core
 EXPOSE 8181
 
 

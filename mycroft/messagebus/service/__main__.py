@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-""" Message bus service for mycroft-core
+""" Message bus service for AI_core
 
-The message bus facilitates inter-process communication between mycroft-core
+The message bus facilitates inter-process communication between AI_core
 processes. It implements a websocket server so can also be used by external
 systems to integrate with the Mycroft system.
 """

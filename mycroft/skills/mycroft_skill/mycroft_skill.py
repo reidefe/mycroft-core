@@ -629,7 +629,7 @@ class MycroftSkill:
         requested.
 
         The method first checks in the current Skill's .voc files and secondly
-        in the "res/text" folder of mycroft-core. The result is cached to
+        in the "res/text" folder of AI_core. The result is cached to
         avoid hitting the disk each time the method is called.
 
         Args:
@@ -645,7 +645,7 @@ class MycroftSkill:
         lang = lang or self.lang
         cache_key = lang + voc_filename
         if cache_key not in self.voc_match_cache:
-            # Check for both skill resources and mycroft-core resources
+            # Check for both skill resources and AI_core resources
             voc = self.find_resource(voc_filename + '.voc', 'vocab')
             if not voc:  # Check for vocab in mycroft core resources
                 voc = resolve_resource_file(join('text', lang,

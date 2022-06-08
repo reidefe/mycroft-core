@@ -32,7 +32,7 @@ This will completely remove any files installed by mycroft (including pairing
 information). 
 
 NOTE: This will not remove Mimic (if you chose to compile it), or other files
-generated within the mycroft-core directory.
+generated within the AI_core directory.
 
 Do you wish to continue? (y/n)'
     while true; do
@@ -58,7 +58,7 @@ Do you wish to continue? (y/n)'
 function show_help() {
     echo '
 Usage: dev_setup.sh [options]
-Prepare your environment for running the mycroft-core services.
+Prepare your environment for running the AI_core services.
 
 Options:
     --clean                 Remove files and folders created by this script
@@ -260,7 +260,7 @@ locally?'
     fi
 
     echo
-    # Add mycroft-core/bin to the .bashrc PATH?
+    # Add AI_core/bin to the .bashrc PATH?
     sleep 0.5
     echo '
 There are several Mycroft helper commands in the bin folder.  These
@@ -419,7 +419,7 @@ function gentoo_install() {
 }
 
 function alpine_install() {
-    $SUDO apk add --virtual .makedeps-mycroft-core \
+    $SUDO apk add --virtual .makedeps-AI_core \
 		alpine-sdk \
 		alsa-lib-dev \
 		autoconf \
@@ -574,7 +574,7 @@ fi
 
 PYTHON=$(python -c "import sys;print('python{}.{}'.format(sys.version_info[0], sys.version_info[1]))")
 
-# Add mycroft-core to the virtualenv path
+# Add AI_core to the virtualenv path
 # (This is equivalent to typing 'add2virtualenv $TOP', except
 # you can't invoke that shell function from inside a script)
 VENV_PATH_FILE="${VIRTUALENV_ROOT}/lib/$PYTHON/site-packages/_virtualenv_path_extensions.pth"
@@ -584,7 +584,7 @@ if [[ ! -f $VENV_PATH_FILE ]] ; then
 fi
 
 if ! grep -q "$TOP" "$VENV_PATH_FILE" ; then
-    echo 'Adding mycroft-core to virtualenv path'
+    echo 'Adding AI_core to virtualenv path'
     sed -i.tmp "1 a$TOP" "$VENV_PATH_FILE"
 fi
 
